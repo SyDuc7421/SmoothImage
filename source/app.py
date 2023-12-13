@@ -220,12 +220,18 @@ class ImageProcessorApp:
         if self.input_path:
             # Lưu ảnh đã được làm trơn
             image_result = cv2.cvtColor(self.img_arr, cv2.COLOR_RGB2BGR)
-            cv2.imwrite(self.output_path,image_result)
 
-            # Hiển thị thông báo
-            # self.result_label = Label(self.frame_image_rsl, text=f"Successfully save image: {self.output_path}")
-            # result_label.pack(pady=10)
-            messagebox.showinfo("Notifi", f"Successfully save image: {self.output_path}")
+
+            file_path = filedialog.asksaveasfilename(
+                    defaultextension=".jpg",
+                    filetypes=[("JPEG files", "*.jpg"), ("All files", "*.*")]
+                )
+
+            if file_path:
+                cv2.imwrite(file_path,image_result)
+                # plt.imsave(file_path, image_result)
+                # Hiển thị thông báo
+                messagebox.showinfo("Notification", f"Successfully save image !")
 
     def clear_status(self):
         self.label_image_source.pack_forget()
