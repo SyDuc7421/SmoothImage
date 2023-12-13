@@ -83,9 +83,9 @@ class ImageProcessorApp:
         # Tạo các thành phần giao diện
 
         # Frame
-        self.frame_smooth = Frame(self.root, width=1100, height=200, padx=5, pady=5, bg='')
-        self.frame_smooth.pack_propagate(False)
-        self.frame_smooth.grid(row = 1, column = 0)
+        self.frame_top_bar = Frame(self.root, width=1100, height=200, padx=5, pady=5, bg='')
+        self.frame_top_bar.pack_propagate(False)
+        # self.frame_top_bar.grid(row = 1, column = 0)
 
         self.frame_transform = Frame(self.root, width=1100, height=600, padx=5, pady=5, bg='')
         self.frame_transform.pack_propagate(False)
@@ -94,6 +94,8 @@ class ImageProcessorApp:
         self.frame_smooth = Frame(self.root, width=1100, height=600, padx=5, pady=5, bg='')
         self.frame_smooth.pack_propagate(False)
         self.frame_smooth.grid(row = 1, column = 0)
+
+
 
         # Frame
         self.frame_side_bar = Frame(self.frame_smooth, width=200, height=600, padx=5, pady=5, bg='#C8CBD5')
